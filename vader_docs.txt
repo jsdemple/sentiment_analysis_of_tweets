@@ -1,0 +1,94 @@
+Help on module nltk.sentiment.vader in nltk.sentiment:
+
+NAME
+    nltk.sentiment.vader - If you use the VADER sentiment analysis tools, please cite:
+
+DESCRIPTION
+    Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for
+    Sentiment Analysis of Social Media Text. Eighth International Conference on
+    Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
+
+CLASSES
+    builtins.object
+        SentiText
+        SentimentIntensityAnalyzer
+    
+    class SentiText(builtins.object)
+     |  Identify sentiment-relevant string-level properties of input text.
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, text)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class SentimentIntensityAnalyzer(builtins.object)
+     |  Give a sentiment intensity score to sentences.
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, lexicon_file='sentiment/vader_lexicon.zip/vader_lexicon/vader_lexicon.txt')
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  make_lex_dict(self)
+     |      Convert lexicon file to a dictionary
+     |  
+     |  polarity_scores(self, text)
+     |      Return a float for sentiment strength based on the input text.
+     |      Positive values are positive valence, negative value are negative
+     |      valence.
+     |  
+     |  score_valence(self, sentiments, text)
+     |  
+     |  sentiment_valence(self, valence, sentitext, item, i, sentiments)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    allcap_differential(words)
+        Check whether just some words in the input are ALL CAPS
+        
+        :param list words: The words to inspect
+        :returns: `True` if some but not all items in `words` are ALL CAPS
+    
+    negated(input_words, include_nt=True)
+        Determine if input contains negation words
+    
+    normalize(score, alpha=15)
+        Normalize the score to be between -1 and 1 using an alpha that
+        approximates the max expected value
+    
+    scalar_inc_dec(word, valence, is_cap_diff)
+        Check if the preceding words increase, decrease, or negate/nullify the
+        valence
+
+DATA
+    BOOSTER_DICT = {'absolutely': 0.293, 'almost': -0.293, 'amazingly': 0....
+    B_DECR = -0.293
+    B_INCR = 0.293
+    C_INCR = 0.733
+    NEGATE = ['aint', 'arent', 'cannot', 'cant', 'couldnt', 'darent', 'did...
+    N_SCALAR = -0.74
+    PUNC_LIST = ['.', '!', '?', ',', ';', ':', '-', "'", '"', '!!', '!!!',...
+    REGEX_REMOVE_PUNCTUATION = re.compile('[\\!\\"\\#\\$\\%\\&\\\'\\(\\)\\...
+    SPECIAL_CASE_IDIOMS = {'bad ass': 1.5, 'cut the mustard': 2, 'hand to ...
+
+FILE
+    /home/nette/lang_myths/sentiment/lib/python3.5/site-packages/nltk/sentiment/vader.py
+
+
