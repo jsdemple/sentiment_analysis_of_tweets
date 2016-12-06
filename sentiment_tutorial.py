@@ -1,4 +1,4 @@
-"""VADER"""
+"""VADER tutorial from nltk website"""
 """Citation for VADER: 
 Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for
     Sentiment Analysis of Social Media Text. Eighth International Conference on
